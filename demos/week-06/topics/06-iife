@@ -1,0 +1,3 @@
+(function( strValue ) {
+    console.log( strValue );
+})( 'Hello, world' );

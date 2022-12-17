@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="message"></p>
+        <button class="btn-add-message">Add message</button>
+        <button class="btn-close">Close message</button>
+
+        <script>
+            var pNode = document.getElementById( 'message' );
+            console.log( pNode );
+
+            // document.querySelectorAll() -> to select multiple DOM nodes (DOM nodes are objects that represent the HTML element)
+            // we pass a CSS selector to querySelector()
+            var btn = document.querySelector( '.btn-add-message' );
+            
+            // the browser call call the function when the btn is 'click'ed
+            btn.addEventListener( 'click', function() {
+                pNode.style.display = 'block';
+                pNode.textContent = 'Hello, world';
+            });
+            
+            var btnClose = document.querySelector( '.btn-close' );
+
+            btnClose.addEventListener( 'click', function() {
+                pNode.style.display = 'none';
+            });
+        </script>
+    </body>
+</html>
