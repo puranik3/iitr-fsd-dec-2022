@@ -42,6 +42,7 @@ function resetGame() {
 
 resetGameBtn.addEventListener( 'click', resetGame );
 
+// set next player
 function setNextPlayer() {
     if( nextPlayer === 'X' ) {
         nextPlayer = 'O';
