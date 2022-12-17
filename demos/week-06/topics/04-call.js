@@ -18,7 +18,7 @@ console.log( john );
 john.celebrateBirthday.call( john ); // age: 34
 console.log( john );
 
-// jane does not have celebrateBirthday() method
+// jane does not have celebrateBirthday() method!
 const jane = {
     name: 'Jane',
     age: 28
