@@ -1,0 +1,72 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 100px;
+}
+
+.app-title {
+    margin: 0 0 2em 0;
+}
+
+.btn {
+    padding: 1em;
+    border: none;
+    border-radius: 4px;
+    margin: 5px;
+}
+
+.btn-confirm,
+.btn-cancel {
+    color: white;
+}
+
+.btn-confirm {
+    background-color: #044389;
+}
+
+.btn-cancel {
+    background-color: #ff0088;
+}
+
+.btn-confirm:active {
+    background-color: #033369;
+}
+
+.btn-cancel:active {
+    background-color: #ff0044;
+}
+
+.btn-close {
+    background-color: #044389;
+    color: white;
+}
+
+.btn-pay {
+    background-color: #044389;
+    color: white;
+}
+
+.btn-pay:active {
+    background-color: #033369;
+}
+
+td {
+    padding: 1em 2em;
+}
+
+select,
+input {
+    padding: 5px;
+}
+
+@media all and (max-width: 540px) {
+    .app {
+        margin: 24px;
+    }
+
+    .app-title {
+        font-size: 1.5em;
+    }
+}

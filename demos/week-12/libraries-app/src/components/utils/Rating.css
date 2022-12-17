@@ -1,0 +1,8 @@
+.star-rating {
+    font-size: 0.85em;
+}
+
+.fa-star,
+.fa-star-half-stroke {
+    color: goldenrod;
+}

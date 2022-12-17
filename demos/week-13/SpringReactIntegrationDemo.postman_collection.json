@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "ef99b1a6-e271-455e-8928-628adcaf63df",
+		"name": "SpringReactIntegrationDemo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"user\",\n    \"password\": \"dummy\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all todos",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjUwMTAwODc3LCJpYXQiOjE2NDk0OTYwNzd9.UL6z2Y7GO4gYKUsK65sk8TN1ObZdL95rRQhRz443v7d2AnHhieOZhB-hs8PESf-M1s4pqjoCAg3Io0qExQNVjg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/jpa/users/user/todos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jpa",
+						"users",
+						"user",
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a single todo",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjUwMTAwODc3LCJpYXQiOjE2NDk0OTYwNzd9.UL6z2Y7GO4gYKUsK65sk8TN1ObZdL95rRQhRz443v7d2AnHhieOZhB-hs8PESf-M1s4pqjoCAg3Io0qExQNVjg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/jpa/users/user/todos/102",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jpa",
+						"users",
+						"user",
+						"todos",
+						"102"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a todo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjUwMDg5NDY1LCJpYXQiOjE2NDk0ODQ2NjV9.RGLy-1dlVBidTHLVRidtkUFSYxomjAXjfQme7xLkyRUCb2RSXrdnsNYCkzlSf3PETLM74QE5SdqshBm2ha8COw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"Learn Swimming\",\n    \"targetDate\": \"2022-04-20\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/jpa/users/user/todos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jpa",
+						"users",
+						"user",
+						"todos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

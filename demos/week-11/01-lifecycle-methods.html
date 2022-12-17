@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div id="root"></div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.development.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.development.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.19.3/babel.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.2/axios.js"></script>
+
+        <script type="text/babel">
+            class WorkshopsList extends React.Component {
+                state = {
+                    loading: true,
+                    workshops: [],
+                    error: null,
+                    page: 1
+                };
+                
+                nextPage = () => {
+                    this.setState({
+                        page: this.state.page + 1
+                    });
+                };
+
+                render() {
+                    const { loading, workshops, error, page } = this.state;
+
+                    return (
+                        <div className="container my-4">
+                            <h1>List of workshops</h1>
+                            <hr />
+                            {
+                                loading && (
+                                    <div className="alert alert-info">
+                                        Workshops are being fetched. Please wait...
+                                    </div>
+                                )
+                            }
+                            {
+                                !loading && !error && (
+                                    <div>
+                                        <div className="my-3">
+                                            <button
+                                                className="btn btn-primary btn-sm"
+                                                onClick={this.nextPage}
+                                            >
+                                                Next page
+                                            </button>
+                                            <div>You are currently viewing page {page}</div>
+                                        </div>
+                                        {
+                                            workshops.map(
+                                                workshop => (
+                                                    <div key={workshop.id}>{workshop.name}</div>
+                                                )
+                                            )
+                                        }
+                                    </div>
+                                )
+                            }
+                            {
+                                !loading && error && (
+                                    <div className="alert alert-danger">
+                                        {error.message}
+                                    </div>
+                                )
+                            }
+                        </div>
+                    );
+                }
+
+                async fetchWorkshops() {
+                    this.setState({
+                        loading: true
+                    });
+                    
+                    try {
+                        const response = await axios.get( `https://workshops-server.herokuapp.com/workshops`, {
+                            params: {
+                                _page: this.state.page
+                            }
+                        });
+
+                        this.setState({
+                            loading: false,
+                            workshops: response.data,
+                            error: null
+                        });
+                    } catch( error ) {
+                        this.setState({
+                            loading: false,
+                            error: error
+                        });
+                    }
+                }
+
+                // called after 1st render
+                componentDidMount() {
+                    this.fetchWorkshops();
+                }
+
+                // called after every prop / state change
+                componentDidUpdate( oldProps, oldState ) {
+                    console.log( 'some state changed' );
+                    console.log( oldState, this.state );
+
+                    if( oldState.page !== this.state.page ) {
+                        this.fetchWorkshops();
+                    }
+                }
+
+                // before component goes off the page
+                componentWillUnmount() {
+                    console.log( 'bye bye' );
+                }
+            }
+
+            const root = ReactDOM.createRoot( document.getElementById( 'root' ) );
+            root.render( <WorkshopsList /> );
+
+            setTimeout(
+                () => {
+                    root.render( <div>That's all folks!</div> );
+                },
+                10000
+            )
+        </script>
+    </body>
+</html>

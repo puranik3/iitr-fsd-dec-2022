@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tic-tac-toe</title>
+        <style>
+            .game {
+                text-align: center;
+            }
+
+            .game__grid {
+                display: grid;
+                grid-template-rows: repeat( 3, 120px );
+                grid-template-columns: repeat( 3, 120px );
+                justify-content: center;
+            }
+
+            .game__cell {
+                border: 1px solid #444;
+                line-height: 120px;
+            }
+
+            .game__status,
+            .game__restart {
+                margin: 1em 0;
+            }
+
+        </style>
+    </head>
+    <body>
+        <section class="game">
+            <h1 class="game__title">Tic tac Toe</h1>
+            <div class="game__grid">
+                <div data-cell-index="0" class="game__cell"></div>
+                <div data-cell-index="1" class="game__cell"></div>
+                <div data-cell-index="2" class="game__cell"></div>
+                <div data-cell-index="3" class="game__cell"></div>
+                <div data-cell-index="4" class="game__cell"></div>
+                <div data-cell-index="5" class="game__cell"></div>
+                <div data-cell-index="6" class="game__cell"></div>
+                <div data-cell-index="7" class="game__cell"></div>
+                <div data-cell-index="8" class="game__cell"></div>
+            </div>
+            <div class="game__status"></div>
+            <button class="game__restart">Restart game</button>
+        </section>
+
+        <script src="index.js"></script>
+    </body>
+</html>

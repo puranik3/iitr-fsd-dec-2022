@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Snake</title>
+        <style>
+            canvas {
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas width="800" height="600" id="canvas-demo"></canvas>
+        <script src="./index.js" type="module"></script>
+
+        <script>
+            const canvas = document.getElementById( 'canvas-demo' );
+            const ctx = canvas.getContext( '2d' );
+
+            ctx.moveTo( 50, 50 );
+            ctx.lineTo( 750, 550 );
+            ctx.stroke();
+        </script>
+    </body>
+</html>
