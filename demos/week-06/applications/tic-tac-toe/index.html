@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tic tac toe</title>
+        <link rel="stylesheet" href="./index.css">
+    </head>
+    <body>
+        <h1>Tic Tac Toe</h1>
+        <hr />
+        <div class="grid">
+            <div data-index="0"></div>
+            <div data-index="1"></div>
+            <div data-index="2"></div>
+
+            <div data-index="3"></div>
+            <div data-index="4"></div>
+            <div data-index="5"></div>
+
+            <div data-index="6"></div>
+            <div data-index="7"></div>
+            <div data-index="8"></div>
+        </div>
+        <div id="next-player-message">
+            Next player: <span id="next-player">X</span>
+        </div>
+        <button id="reset-game">Reset game</button>
+
+        <script src="./index.js"></script>
+    </body>
+</html>

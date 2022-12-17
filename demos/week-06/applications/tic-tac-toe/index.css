@@ -1,0 +1,27 @@
+html {
+    font-size: 30px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 360px;
+}
+
+.grid > * {
+    flex-basis: 33.333333%;
+    flex-grow: 0;
+    flex-shrink: 0; 
+    height: 120px;
+    border: 1px solid black;
+    text-align: center;
+    line-height: 120px;
+}
+
+#next-player-message {
+    margin-top: 24px;
+}
