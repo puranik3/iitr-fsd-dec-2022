@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="message" class="x">Para 1 (#message)</p>
+        
+        <p class="x">Para 2 (class x)</p>
+        
+        <section>
+            <p class="x">Para within a section (class x)</p>
+        </section>
+        
+        <p>Para 3</p>
+
+        <script>
+            /**
+             * Get message element by id
+             * Get elements with class x (getElementsByClassName)
+             * Get elements with class x (querySelectorAll)
+             * Get first element with class name x (querySelector)
+             * Get first element with class name x that lies within a section (2 approaches - using CSS selector, and searching in a DOM subtree)
+             */
+            const p1 = document.getElementById( 'message' );
+            // console.log( p1 );
+            console.dir( p1 );
+
+            const xEls = document.getElementsByClassName( 'x' );
+            console.log( xEls );
+            console.dir( xEls[0] ); // first para with class x
+            console.dir( xEls.length ); // 3
+
+            // select using CSS selectors
+            const xEls2 = document.querySelectorAll( '.x' ); // use CSS selectors
+            console.log( xEls2 );
+            console.dir( xEls2[0] );
+            console.log( xEls2.length ); // 3
+
+            const xElsFirst = document.querySelector( '.x' ); // first match
+            console.dir( xElsFirst );
+
+            const section = document.querySelector( 'section' );
+            // searches within the section for element with class x
+            const sectionPara = section.querySelector( '.x' );
+            console.log( sectionPara );
+
+            const sectionPara2 = document.querySelector( 'section > .x' );
+            console.log( sectionPara2 );
+        </script>
+    </body>
+</html>
