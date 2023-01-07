@@ -69,17 +69,27 @@ function loadTrack() {
     track_name.innerText = track.name;
     track_artist.innerText = track.artist;
 
+    random_bg_color();
+
     // set up for calling seekUpdate() every second
     setInterval( seekUpdate, 1000 );
 }
 
 // Set up a random background color
 function random_bg_color() {
-    
+    let red = Math.floor( Math.random() * ( 256 - 64 ) ) + 64;
+    let green = Math.floor( Math.random() * ( 256 - 64 ) ) + 64;
+    let blue = Math.floor( Math.random() * ( 256 - 64 ) ) + 64;
+
+    let color = `rgb( ${red}, ${green}, ${blue} )`;
+    document.body.style.backgroundColor = color;
 }
-    
+
 // Reset all values to their default
 function resetValues() {
+    curr_time.innerText = '00:00';
+    total_duration.innerText = '00:00';
+    seek_slider.value = 0;
 }
 
 // To switch to playing when paused, and vice versa
@@ -97,7 +107,9 @@ function playTrack() {
     playpause_btn.innerHTML = '<i class="fas fa-pause-circle fa-5x"></i>';
     
     // set up total duration of the track
-    total_duration.innerText = convertDuration( audio_player.duration );
+    setTimeout(function() {
+        total_duration.innerText = convertDuration( audio_player.duration );
+    }, 100);
 }
     
 function pauseTrack() {
