@@ -60,12 +60,47 @@ export default class Snake {
                 ctx.fillRect( tail.x * cellSideLength, tail.y * cellSideLength, cellSideLength, cellSideLength );
             }
         );
+
+        const size = cellSideLength / 10;
+        const offset = cellSideLength / 3;
+        
+        // eyes
+        switch (this.direction) {
+            case DIRECTIONS.UP:
+                ctx.beginPath();
+                ctx.arc( x + offset, y + offset, size, 0, 2 * Math.PI );
+                ctx.arc( x + 2 * offset, y + offset, size, 0, 2 * Math.PI );
+                ctx.fillStyle = "white";
+                ctx.fill();
+                break;
+            case DIRECTIONS.DOWN:
+                ctx.beginPath();
+                ctx.arc( x + offset, y + 2 * offset, size, 0, 2 * Math.PI );
+                ctx.arc( x + 2 * offset, y + 2 * offset, size, 0, 2 * Math.PI );
+                ctx.fillStyle = "white";
+                ctx.fill();
+                break;
+            case DIRECTIONS.RIGHT:
+                ctx.beginPath();
+                ctx.arc( x + 2 * offset, y + offset, size, 0, 2 * Math.PI );
+                ctx.arc( x + 2 * offset, y + 2 * offset, size, 0, 2 * Math.PI );
+                ctx.fillStyle = "white";
+                ctx.fill();
+                break;
+            case DIRECTIONS.LEFT:
+                ctx.beginPath();
+                ctx.arc( x + offset, y + offset, size, 0, 2 * Math.PI );
+                ctx.arc( x + offset, y + 2 * offset, size, 0, 2 * Math.PI );
+                ctx.fillStyle = "white";
+                ctx.fill();
+                break;
+        }
     }
 
     setDirection( direction ) {
         const curDirection = this.direction;
 
-        // no change is direction
+        // no change in direction
         if( direction === curDirection ) {
             return;
         }

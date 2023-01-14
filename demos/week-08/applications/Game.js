@@ -26,6 +26,7 @@ export default class Game {
             color: Config.COLORS[0]
         };
 
+        this.requestAnimationFrameId = 0;
         this.nextMove = 0;
         this.score = 0;
 
@@ -40,7 +41,7 @@ export default class Game {
 
     start() {
         this.running = true;
-        requestAnimationFrame( this.loop );
+        this.requestAnimationFrameId = requestAnimationFrame( this.loop );
     }
 
     stop() {
@@ -51,7 +52,7 @@ export default class Game {
         if( this.running ) {
             // console.log( 'loop' );
             // console.log( this ); // "this" is NOT the Game object
-            requestAnimationFrame( this.loop );
+            this.requestAnimationFrameId = requestAnimationFrame( this.loop );
             
             if( time >= this.nextMove ) {
                 console.log( 'refresh the game' );
@@ -102,6 +103,7 @@ export default class Game {
     gameOver() {
         alert( 'Game over' );
         this.stop();
+        cancelAnimationFrame( this.requestAnimationFrameId );
     }
 
     paint() {
@@ -122,19 +124,21 @@ export default class Game {
     }
 
     onKeyDown = ( event ) => {
-        event.preventDefault();
-
         switch( event.key ) {
             case 'ArrowUp':
+                event.preventDefault();
                 this.snake.setDirection( DIRECTIONS.UP );
                 break;
             case 'ArrowDown':
+                event.preventDefault();
                 this.snake.setDirection( DIRECTIONS.DOWN );
                 break;
             case 'ArrowRight':
+                event.preventDefault();
                 this.snake.setDirection( DIRECTIONS.RIGHT );
                 break;
             case 'ArrowLeft':
+                event.preventDefault();
                 this.snake.setDirection( DIRECTIONS.LEFT );
                 break;
         }
@@ -145,8 +149,9 @@ export default class Game {
     }
 
     addToScore( score ) {
-        this.score = score;
-        document.getElementById( 'score' ).textContent = this.score;
+        this.score += score;
+        document.getElementById( 'score' ).innerText = this.score;
+        console.log( this.score );
     }
 
     levelUp() {
