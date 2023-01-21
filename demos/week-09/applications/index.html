@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ping pong</title>
+        <link rel="stylesheet" href="./index.css">
+    </head>
+    <body>
+        <div class="board">
+            <div class="ball">
+                <div class="ball_effect"></div>
+            </div>
+
+            <div class="paddle paddle_1"></div>
+            <div class="paddle paddle_2"></div>
+
+            <div class="header">
+                <span class="player_1_score">0</span>
+                <strong class="message">Press Enter to start</strong>
+                <span class="player_2_score">0</span>
+            </div>
+        </div>
+
+        <script type="module">
+            import Game from './dist/index.js';
+            const game = new Game();
+            game.start();
+        </script>
+    </body>
+</html>
