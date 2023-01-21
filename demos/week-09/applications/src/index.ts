@@ -107,6 +107,19 @@ class Game {
         } as Velocity;
     }
 
+    bounce( velocity : Velocity ) {
+        let newVelocity = this.getVelocity();
+        
+        // set opposite direction for x, and maintain direction for y
+        let curXDirection = velocity.dx > 0 ? 1 : -1;
+        let curYDirection = velocity.dy > 0 ? 1 : -1;
+        
+        newVelocity.dx = Math.abs( newVelocity.dx ) * -curXDirection;
+        newVelocity.dy = Math.abs( newVelocity.dy ) * curYDirection;
+
+        return newVelocity;
+    };
+
     moveBall( velocity : Velocity ) {
         // if the ball hits the board top/bottom boundaries, we bounce it off...
         if(
@@ -131,7 +144,8 @@ class Game {
             &&
             ballCoord.bottom <= paddle2Coord.bottom
         ) {
-            velocity.dx = -velocity.dx;
+            // velocity.dx = -velocity.dx;
+            velocity = this.bounce( velocity );
         }
 
         // has player1 won?
