@@ -1,0 +1,14 @@
+.order-value,
+.order-delivery {
+    text-align: center;
+    margin: 20px;
+}
+
+.order-details {
+    margin: 0 auto;
+}
+
+.order-details td {
+    font-family: serif;
+    padding: 10px;
+}
