@@ -2,6 +2,7 @@
 import { Component, ChangeEvent, FormEvent } from 'react';
 import { generateSerialNumbers } from '../utils/array';
 import ConfirmPayment from './ConfirmPayment';
+import PaymentOptions from '../models/PaymentOptions';
 
 type Props = {
     bgColor: string
@@ -13,18 +14,20 @@ type State = {
     month: number,
     year: number,
     cvv: number,
-    showSuccessPayment: boolean
+    showConfirmPayment: boolean
 }
 
 class CreditDebitCard extends Component<Props, State> {
-    state = {
+    static initialState = {
         ccNumber: '0',
         name: '',
         month: 0,
         year: 0,
         cvv: 0,
-        showSuccessPayment: false
+        showConfirmPayment: false
     };
+
+    state = CreditDebitCard.initialState;
 
     // constructor( props : Props ) {
     //     super( props ); // this.props = props
@@ -58,14 +61,18 @@ class CreditDebitCard extends Component<Props, State> {
         event.preventDefault();
 
         this.setState({
-            showSuccessPayment: true
+            showConfirmPayment: true
         });
     };
 
-    hideSuccessPayment = ( event : any ) => {
+    hideSuccessPayment = () => {
         this.setState({
-            showSuccessPayment: false
+            showConfirmPayment: false
         });
+    }
+
+    reset = () => {
+        this.setState({ ...CreditDebitCard.initialState });
     }
 
     render() {
@@ -78,7 +85,7 @@ class CreditDebitCard extends Component<Props, State> {
             month,
             year,
             cvv,
-            showSuccessPayment
+            showConfirmPayment
         } = this.state;
 
         return (
@@ -132,6 +139,7 @@ class CreditDebitCard extends Component<Props, State> {
                                         value={month}
                                         onChange={this.setIntValue}
                                     >
+                                        <option value="">mm</option>
                                         {
                                             generateSerialNumbers( 1, 12 ).map(
                                                 x => (
@@ -148,6 +156,7 @@ class CreditDebitCard extends Component<Props, State> {
                                         value={year}
                                         onChange={this.setIntValue}
                                     >
+                                        <option value="">yyyy</option>
                                         {
                                             generateSerialNumbers( 2023, 2033 ).map(
                                                 x => (
@@ -185,7 +194,13 @@ class CreditDebitCard extends Component<Props, State> {
                 </form>
 
                 {
-                    showSuccessPayment === true && <ConfirmPayment onNo={this.hideSuccessPayment} />
+                    showConfirmPayment === true && (
+                        <ConfirmPayment
+                            onNo={this.hideSuccessPayment}
+                            onYes={this.reset}
+                            paymentOption={PaymentOptions.CARD}
+                        />
+                    )
                 }
             </div>
         );
