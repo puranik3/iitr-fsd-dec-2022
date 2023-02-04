@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div id="root"></div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.development.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.development.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+
+        <script type="text/babel">
+            const getWorkshops = async ( _page ) => {
+                const response = await axios.get( `https://workshops-server.herokuapp.com/workshops`, {
+                    params: {
+                        _page
+                    }
+                } );
+                return response.data;
+            };
+
+            class WorkshopsList extends React.Component {
+                state = {
+                    workshops: [],
+                    error: null,
+                    loading: true,
+                    _page: 1
+                };
+
+                previous = () => {
+                    this.setState({
+                        _page: this.state._page - 1
+                    });
+                }
+                
+                next = () => {
+                    this.setState({
+                        _page: this.state._page + 1
+                    });
+                }
+
+                render() {
+                    const { workshops, error, loading } = this.state;
+
+                    return (
+                        <div className="container my-5">
+                            <h1>List of workshops</h1>
+                            <hr />
+                            <button onClick={this.previous}>Previous page</button>
+                            <button onClick={this.next}>Next page</button>
+                            {
+                                loading && (
+                                    <div className="d-flex justify-content-center">
+                                        <div className="spinner-border" role="status">
+                                            <span className="visually-hidden">Loading...</span>
+                                        </div>
+                                    </div>
+                                )
+                            }
+                            {
+                                !loading && error && (
+                                    <div className="alert alert-danger" role="alert">
+                                        {error.message}
+                                    </div>
+                                )
+                            }
+                            {
+                                !loading && !error && (
+                                    <React.Fragment>
+                                        <div>Total workshops: {workshops.length}</div>
+                                        {
+                                            workshops.map(
+                                                workshop => (
+                                                    <div className="card my-2" key={workshop.id}>
+                                                        <div className="card-body">
+                                                            <h5 className="card-title">{workshop.name}</h5>
+                                                        </div>
+                                                    </div>
+                                                )
+                                            )
+                                        }
+                                    </React.Fragment>
+                                )
+                            }
+                        </div>
+                    );
+                }
+
+                async fetchWorkshops() {
+                    try {
+                        const workshops = await getWorkshops( this.state._page );
+
+                        this.setState({
+                            workshops,
+                            loading: false
+                        });
+                    } catch( error ) {
+                        this.setState({
+                            error,
+                            loading: false
+                        });
+                    }
+                }
+
+                // called on mounting
+                componentDidMount() {
+                    console.log( 'cdm' );
+                    this.fetchWorkshops();
+                }
+
+                // called after state / prop changes
+                componentDidUpdate( oldProps, oldState ) {
+                    console.log( 'cdu' );
+
+                    // only if the _page part ofthe state changed then feth again
+                    if( oldState._page !== this.state._page ) {
+                        this.fetchWorkshops();
+                    }
+                }
+
+                componentWillUnmount() {
+                    console.log( "That's all folks!" );
+                }
+            };
+
+            const root = ReactDOM.createRoot( document.getElementById( 'root' ) );
+            root.render( <WorkshopsList /> );
+
+            setTimeout(
+                () => {
+                    root.render( <div>Earlier component has been hijacked by me! Hehe</div> );
+                },
+                5000
+            )
+        </script>
+    </body>
+</html>

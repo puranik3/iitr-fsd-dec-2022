@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div id="root"></div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.development.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.development.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+
+        <script type="text/babel">
+            // shouldComponentUpdate() is the class component equivalent for React.memo()
+
+            // Whenever Parent component renders, by default the children components re-render
+            // When we wrap the function component definition in React.memo(), the underlying function component re-renders ONLY when some prop value changes
+
+            const PanelTitle = React.memo(( { title, toggle } ) => {
+                console.log( 'rendering PanelTitle' );
+                return <div className="bg-dark text-light p-2" onClick={toggle}>{title}</div>
+            });
+
+            const PanelBody = ( { show, children } ) => {
+                console.log( 'rendering PanelBody' );
+                return show && (
+                    children
+                );
+            };
+
+            const Panel = ( { title, children } ) => {
+                console.log( 'rendering Panel' );
+                const [ show, setShow ] = React.useState( true );
+
+                // this is a local function - a new function is created every time Panel re-renders
+                // toggle will be re-created in Panel, every time Panel re-renders -> We can use useCallback to prevent this re-creation
+
+                const toggle = React.useCallback(
+                    () => { // callback function prop
+                        setShow( s => !s );
+                    },
+                    [ setShow ] // on what variable / method changes, the callback function needs to get recreated (by the way setShow will never change)
+                );
+
+                return (
+                    <div className="border border-dark">
+                        <PanelTitle title={title} toggle={toggle} />
+                        <PanelBody show={show}>{children}</PanelBody>
+                    </div>
+                );
+            };
+
+            const root = ReactDOM.createRoot( document.getElementById( 'root' ) );
+            root.render(
+                <div className="m-3">
+                    <Panel title="What is useCallback?">
+                        <div className="p-2">It is a hook for eliminating</div>
+                    </Panel>
+                    {/*
+                    <Panel title="What is its class component equivalent">
+                        <div className="p-2">Class components do not require it, but the equivalent for React.memo() is shouldComponentUpdate</div>
+                    </Panel>
+                    */}
+                </div>
+            );
+        </script>
+    </body>
+</html>
