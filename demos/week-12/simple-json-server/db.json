@@ -1,0 +1,214 @@
+{
+  "libraries": [
+    {
+      "id": 1,
+      "name": "State Central Library, Thiruvananthapuram",
+      "location": "Mahathma Gandhi Rd, Near KERALA UNIVERSITY STADIUM, University of Kerala Senate House Campus, Palayam, Thiruvananthapuram, Kerala 695033.",
+      "description": "It was established in the year 1829 A.D. It has a total collection of 3,67,243 documents in different languages such as English, Malayalam, Hindi, Tamil, Sanskrit in various disciplines. The library subscribes to 27 dailies and 215 journals including foreign journals",
+      "opens": "11:00",
+      "closes": "23:30",
+      "rating": 4.1,
+      "noOfRatings": 125,
+      "imageUrl": "/images/libraries/1_State-Central-Library-Trivandrum.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Mahatma Gandhi Central Library",
+      "location": "3XGQ+WVV, Saravanampatti, Coimbatore, Tamil Nadu 641006",
+      "description": "The MGCL of the Institute finds a unique place in the academic library scenario in this part of the world. It is an amalgamation of the classic and the modern. While it is one of the oldest academic libraries in country, it is housed in a 80,000 sq. ft. state-of-the-art ultra-modern centrally airconditioned building equipped with all latest ICT facilities spread over in four floors. Library building, equipped with surveillance system, has been aesthetically designed for around 500 users keeping in view comfort for cozy access and intelligent use by all kinds of users.",
+      "opens": "10:00",
+      "closes": "22:30",
+      "rating": 4.3,
+      "noOfRatings": 89,
+      "imageUrl": "/images/libraries/2_Mahatma_Gandhi_Central_Library.jpg"
+    },
+    {
+      "id": 3,
+      "name": "National Library of Medicine",
+      "location": " Ansari Nagar, Ring Rd, New Delhi, Delhi 110029",
+      "description": "National Medical Library is a medical library established on 1 April 1966 by the Government of India. It is located in Ansari Nagar, New Delhi. It aims to provide library and information services to the health science professionals in India. It functions under the administrative control of the Directorate General of Health Services. It has 3.6 lakh volumes of books, reports, bound volume of journals and other literature. It subscribes around 2000 periodicals annually. The library has good collection of 19th century literature. Books are classified according to the Dewey Decimal Classification. It became the Indian focal point of HELLIS Network under World Health Organization in 1982.",
+      "opens": "11:00",
+      "closes": "23:30",
+      "rating": 3.9,
+      "noOfRatings": 254,
+      "imageUrl": "/images/libraries/3_National-Library-of-Medicine.jpg"
+    },
+    {
+      "id": 4,
+      "name": "State Central Library Bangalore",
+      "location": "Cubbon Park Road Near Ambedkar Veedhi, Sampangi Rama Nagara, Bengaluru, Karnataka 560001",
+      "description": "One of the biggest landmarks in the city, the City Central Library with its brick red walls and a huge collection of books is a pride of the city. The library has more than 50,000 books, open space and even a small park to read your books in. They also have a huge collection of regionals language books such as Kannada novels and academic books, Telugu, Hindi, Tamil languages books. The library is divided into over 30000 different sections!",
+      "opens": "7:30",
+      "closes": "22:30",
+      "rating": 4.5,
+      "noOfRatings": 150,
+      "imageUrl": "/images/libraries/4_State_Central_Library_Bangalore.jpg"
+    }
+  ],
+  "genres": [
+    {
+      "id": 1,
+      "libraryId": 1,
+      "name": "Children's Literature",
+      "description": "Children's literature or juvenile literature includes stories, books, magazines, and poems that are created for children. Modern children's literature is classified in two different ways: genre or the intended age of the reader.",
+      "imageUrl": "/images/libraries/Childrens-Literature.jpg"
+    },
+    {
+      "id": 2,
+      "libraryId": 1,
+      "name": "Fantasy",
+      "description": "Fantasy is a genre of speculative fiction involving magical elements, typically set in a fictional universe and sometimes inspired by mythology and folklore. Its roots are in oral traditions, which then became fantasy literature and drama. From the twentieth century, it has expanded further into various media, including film, television, graphic novels, manga, animated movies and video games.",
+      "imageUrl": "/images/libraries/Fantacy.jpg"
+    },
+    {
+      "id": 3,
+      "libraryId": 1,
+      "name": "Oceanography",
+      "description": "Oceanography also known as oceanology, is the scientific study of the oceans. It is an important Earth science, which covers a wide range of topics, including ecosystem dynamics; ocean currents, waves, and geophysical fluid dynamics; plate tectonics and the geology of the sea floor; and fluxes of various chemical substances and physical properties within the ocean and across its boundaries. These diverse topics reflect multiple disciplines that oceanographers utilize to glean further knowledge of the world ocean, including astronomy, biology, chemistry, climatology, geography, geology, hydrology, meteorology and physics. Paleoceanography studies the history of the oceans in the geologic past. An oceanographer is a person who studies many matters concerned with oceans including marine geology, physics, chemistry and biology.",
+      "imageUrl": "/images/libraries/Oceanography.jpg"
+    },
+    {
+      "id": 4,
+      "libraryId": 1,
+      "name": "Biography",
+      "description": "A biography, or simply bio, is a detailed description of a person's life. It involves more than just the basic facts like education, work, relationships, and death; it portrays a person's experience of these life events. Unlike a profile or curriculum vitae (résumé), a biography presents a subject's life story, highlighting various aspects of their life, including intimate details of experience, and may include an analysis of the subject's personality.",
+      "imageUrl": "/images/libraries/Biography.jpg"
+    },
+    {
+      "id": 5,
+      "libraryId": 1,
+      "name": "Psychology",
+      "description": "Psychology is the scientific study of mind and behavior. Psychology includes the study of conscious and unconscious phenomena, including feelings and thoughts. It is an academic discipline of immense scope, crossing the boundaries between the natural and social sciences.",
+      "imageUrl": "/images/libraries/Psychology.jpg"
+    },
+    {
+      "id": 6,
+      "libraryId": 2,
+      "name": "Poetry",
+      "description": "Poetry has a long and varied history, evolving differentially across the globe. It dates back at least to prehistoric times with hunting poetry in Africa, and to panegyric and elegiac court poetry of the empires of the Nile, Niger, and Volta River valleys. Some of the earliest written poetry in Africa occurs among the Pyramid Texts written during the 25th century BCE. The earliest surviving Western Asian epic poetry, the Epic of Gilgamesh, was written in Sumerian.",
+      "imageUrl": "/images/libraries/Poetry.png"
+    },
+    {
+      "id": 7,
+      "libraryId": 2,
+      "name": "Romance",
+      "description": "A romance novel or romantic novel generally refers to a type of genre fiction novel which places its primary focus on the relationship and romantic love between two people, and usually has an \"emotionally satisfying and optimistic ending.\" However, precursors include authors of literary fiction, such as Samuel Richardson, Jane Austen, and Charlotte Brontë.",
+      "imageUrl": "/images/libraries/Romance.jpg"
+    },
+    {
+      "id": 8,
+      "libraryId": 2,
+      "name": "Science Fiction (Sci-Fi)",
+      "description": "Science fiction (sometimes shortened to sci-fi or SF) is a genre of speculative fiction which typically deals with imaginative and futuristic concepts such as advanced science and technology, space exploration, time travel, parallel universes, and extraterrestrial life. It has been called the \"literature of ideas\", and it often explores the potential consequences of scientific, social, and technological innovations.",
+      "imageUrl": "/images/libraries/Science-Fiction.png"
+    },
+    {
+      "id": 9,
+      "libraryId": 2,
+      "name": "Rural Development",
+      "description": "Rural Development has traditionally centered on the exploitation of land-intensive natural resources such as agriculture and forestry. However, changes in global production networks and increased urbanization have changed the character of rural areas. Increasingly tourism, niche manufacturers, and recreation have replaced resource extraction and agriculture as dominant economic drivers.",
+      "imageUrl": "/images/libraries/Rural-Development.jpg"
+    },
+    {
+      "id": 10,
+      "libraryId": 3,
+      "name": "Neurology",
+      "description": "Neurology is a branch of medicine dealing with disorders of the nervous system. Neurology deals with the diagnosis and treatment of all categories of conditions and disease involving the central and peripheral nervous systems (and their subdivisions, the autonomic and somatic nervous systems), including their coverings, blood vessels, and all effector tissue, such as muscle.[1] Neurological practice relies heavily on the field of neuroscience, the scientific study of the nervous system.",
+      "imageUrl": "/images/libraries/Neurology.jpg"
+    },
+    {
+      "id": 11,
+      "libraryId": 3,
+      "name": "Dermatology",
+      "description": "Dermatology is the branch of medicine dealing with the skin. It is a speciality with both medical and surgical aspects. A dermatologist is a specialist medical doctor who manages diseases related to skin, hair, nails, and some cosmetic problems.",
+      "imageUrl": "/images/libraries/Dermatology.jpg"
+    },
+    {
+      "id": 12,
+      "libraryId": 3,
+      "name": "Gynaecology",
+      "description": "Gynaecology or gynecology (see spelling differences) is the medical practice dealing with the health of the female reproductive system. Almost all modern gynaecologists are also obstetricians (see obstetrics and gynaecology). In many areas, the specialities of gynaecology and obstetrics overlap.",
+      "imageUrl": "/images/libraries/Gynecology.jpg"
+    },
+    {
+      "id": 13,
+      "libraryId": 3,
+      "name": "Physiotherapy",
+      "description": "Physical therapy (PT), also known as physiotherapy, is one of the allied health professions. It is provided by physical therapists who promote, maintain, or restore health through physical examination, diagnosis, prognosis, patient education, physical intervention, rehabilitation, disease prevention, and health promotion. Physical therapists are known as physiotherapists in many countries.",
+      "imageUrl": "/images/libraries/Physiotherapy.jpg"
+    },
+    {
+      "id": 14,
+      "libraryId": 3,
+      "name": "General Surgery",
+      "description": "General surgery is a surgical specialty that focuses on abdominal contents including the esophagus, stomach, small intestine, large intestine, liver, pancreas, gallbladder, appendix and bile ducts, and often the thyroid gland. They also deal with diseases involving the skin, breast, soft tissue, trauma, peripheral artery disease and hernias and perform endoscopic procedures such as gastroscopy and colonoscopy.",
+      "imageUrl": "/images/libraries/General-Surgery.jpg"
+    },
+    {
+      "id": 15,
+      "libraryId": 4,
+      "name": "Species protection",
+      "description": "An endangered species is a species that is very likely to become extinct in the near future, either worldwide or in a particular political jurisdiction. Endangered species may be at risk due to factors such as habitat loss, poaching and invasive species. The International Union for Conservation of Nature (IUCN) Red List lists the global conservation status of many species, and various other agencies assess the status of species within particular areas. Many nations have laws that protect conservation-reliant species which, for example, forbid hunting, restrict land development, or create protected areas. Some endangered species are the target of extensive conservation efforts such as captive breeding and habitat restoration.",
+      "imageUrl": "/images/libraries/Species-Protection.png"
+    },
+    {
+      "id": 16,
+      "libraryId": 4,
+      "name": "Linguistics",
+      "description": "Linguistics is the scientific study of human language, meaning that it is a comprehensive, systematic, objective, and precise study of language. Linguistics encompasses the analysis of all aspects of language, as well as the methods for studying and modelling them.",
+      "imageUrl": "/images/libraries/Linguistics.png"
+    },
+    {
+      "id": 17,
+      "libraryId": 4,
+      "name": "Indology",
+      "description": "Indology includes the study of Sanskrit literature and Hinduism along with the other Indian religions (like Jainism, Buddhism, Sikhism), Pāli and Tamil literature. There are many branches in Indology: for example, Sindhology is dedicated to study the history of Sindh. Dravidology is the separate branch dedicated to the Dravidian languages of Southern India. Hindu texts in Dravidian languages are considered disciplines in Indology.",
+      "imageUrl": "/images/libraries/Indology.jpg"
+    },
+    {
+      "id": 18,
+      "libraryId": 4,
+      "name": "Science and Technology Studies (STS)",
+      "description": "Science & Technology Studies is an international peer-reviewed journal dedicated to the advancement of scholarly studies of science and technology as socio-material phenomena, including their historical and contemporary production and their associated forms of knowledge, expertise, social organization and controversy. This includes interest in developing Science and Technology Studies' own knowledge production techniques, methodology and interventions.",
+      "imageUrl": "/images/libraries/STS.jpg"
+    },
+    {
+      "id": 19,
+      "libraryId": 4,
+      "name": "Fashion Design",
+      "description": "Fashion design is the art of applying design, aesthetics, clothing construction and natural beauty to clothing and its accessories. It is influenced by culture and different trends, and has varied over time and place. \"A fashion designer creates clothing, including dresses, suits, pants, and skirts, and accessories like shoes and handbags, for consumers. He or she can specialize in clothing, accessory, or jewelry design, or may work in more than one of these areas.",
+      "imageUrl": "/images/libraries/Fashion-Design.jpg"
+    },
+    {
+      "id": 20,
+      "libraryId": 4,
+      "name": "Astronomy",
+      "description": "Astronomy (from Greek: ἀστρονομία, literally meaning the science that studies the laws of the stars) is a natural science that studies celestial objects and phenomena. It uses mathematics, physics, and chemistry in order to explain their origin and evolution. Objects of interest include planets, moons, stars, nebulae, galaxies, and comets. Relevant phenomena include supernova explosions, gamma ray bursts, quasars, blazars, pulsars, and cosmic microwave background radiation. More generally, astronomy studies everything that originates beyond Earth's atmosphere. Cosmology is a branch of astronomy that studies the universe as a whole.",
+      "imageUrl": "/images/libraries/Astronomy.jpg"
+    }
+  ],
+  "image-sources": [
+    "https://upload.wikimedia.org/wikipedia/commons/7/73/Mahatma_Gandhi_Central_Library.jpg",
+    "https://www.nlm.nih.gov/images/history.jpg",
+    "https://entecity.com/places/files/2012/07/State-Central-Library-Trivandrum.jpg",
+    "https://www.karnataka.com/wp-content/uploads/2016/07/State_Central_Library_Bangalore.jpg",
+    "http://blogs.slj.com/afuse8production/files/2017/04/Outlandish.jpg",
+    "https://i.pinimg.com/originals/12/8f/1f/128f1fc9a278aa6ed48477d2c46ccb53.jpg",
+    "https://leverageedu.com/blog/wp-content/uploads/2020/03/Oceanography.jpg",
+    "https://www.collinsdictionary.com/images/full/biography_176902637.jpg",
+    "https://miuc.org/wp-content/uploads/2019/11/Why-we-love-social-psychology.jpg",
+    "https://pi.tedcdn.com/r/talkstar-assets.s3.amazonaws.com/production/playlists/playlist_697/a96f0391-83e8-45a3-bc6a-f1c571b78239/poetry_by_women_SQ.jpg?",
+    "https://images.saymedia-content.com/.image/t_share/MTc0NDg3NzQyMTQyMDMxMjA4/why-science-fiction-is-our-biggest-weapon-against-climate-change.png",
+    "https://cdn.kiit.ac.in/wp-content/uploads/2019/10/ISCA-bg.jpg",
+    "https://www.regionalneurological.com/wp-content/uploads/2019/12/AdobeStock_172813720.jpeg",
+    "https://www.sparshhospital.com/uploads/page_banners/desktop/Speciality_--_Dermatology1.jpg",
+    "https://st3.depositphotos.com/16499398/19064/v/600/depositphotos_190645316-stock-illustration-gynecology-logo-isolated-on-white.jpg",
+    "https://leverageedu.com/blog/wp-content/uploads/2019/09/Physio.jpg",
+    "https://environmentoregon.org/sites/environment/files/AME_Protect-Endangered-Species_WEB-LOGO.png",
+    "https://blogonlinguistics.files.wordpress.com/2016/03/major_levels_of_linguistic_structure-ip3.png",
+    "https://3.bp.blogspot.com/-_46btMvXV5M/VRgTEqfsw-I/AAAAAAAAAKI/pmC5YT26mGg/s1600/Indology.jpg",
+    "https://qvcc.edu/wp-content/uploads/2016/06/iStock_000082703707_Large.jpg",
+    "https://i.ytimg.com/vi/gNNFTW8yO8s/maxresdefault.jpg",
+    "https://sociable.co/wp-content/uploads/2019/06/galaxy-telescope-1280x720.jpg"
+  ]
+}
