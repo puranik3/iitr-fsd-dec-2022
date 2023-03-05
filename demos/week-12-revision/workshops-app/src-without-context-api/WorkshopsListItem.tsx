@@ -1,15 +1,12 @@
-import { useWorkshops } from "./contexts/workshops";
 import IWorkshop from "./models/IWorkshop";
 import { deleteWorkshop } from "./services/workshops";
 
-
 type Props = {
-    workshop: IWorkshop
+    workshop: IWorkshop,
+    deleteWorkshopWithId: Function
 };
 
-const WorkshopsListItem = ({ workshop }: Props) => {
-    const { deleteWorkshopWithId } = useWorkshops();
-
+const WorkshopsListItem = ({ workshop, deleteWorkshopWithId }: Props) => {
     const removeWorkshop = async () => {
         try {
             await deleteWorkshop( workshop.id );

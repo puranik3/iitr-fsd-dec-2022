@@ -68,14 +68,18 @@ const App = () => {
                     <div className="col-12 col-md-8">
                         <WorkshopsList
                             loading={loading}
+                            workshops={workshops}
                             error={error}
                             format={format}
+                            deleteWorkshopWithId={deleteWorkshopWithId}
                             x={100}
                             // foo={() => { return true; }}
                         />
                     </div>
                     <div className="col-12 col-md-4">
-                        <AddEditWorkshop />
+                        <AddEditWorkshop
+                            addWorkshop={addWorkshop}
+                        />
                     </div>
                 </div>
             </div>

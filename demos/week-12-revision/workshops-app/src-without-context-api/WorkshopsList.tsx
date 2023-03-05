@@ -1,24 +1,21 @@
 import { useState, useEffect } from "react";
 import IWorkshop from "./models/IWorkshop";
 import WorkshopsListItem from "./WorkshopsListItem";
-import { useWorkshops } from "./contexts/workshops";
 
 type Props = {
     format: "compact" | "expanded",
     x: number,
     loading: boolean,
+    workshops: IWorkshop[],
     error: Error | null,
-    // deleteWorkshopWithId: Function
+    deleteWorkshopWithId: Function
     // foo: () => boolean
 };
 
 // const WorkshopsList = ( props : Props ) => {
 // console.log( props );
-const WorkshopsList = ({ format, loading, error, x }: Props) => {
+const WorkshopsList = ({ format, loading, workshops, error, deleteWorkshopWithId, x }: Props) => {
     // console.log( format, x );
-
-    // useContext gives { workshops: ..., addWorkshop: ..., deleteWorkshopWithId: ... }
-    const { workshops } = useWorkshops();
 
     // to maintain user's input within the search box
     const [ searchKey, setSearchKey ] = useState( '' );
@@ -78,6 +75,7 @@ const WorkshopsList = ({ format, loading, error, x }: Props) => {
                                     <WorkshopsListItem
                                         key={workshop.id}
                                         workshop={workshop}
+                                        deleteWorkshopWithId={deleteWorkshopWithId}
                                     />
                                 )
                             )
