@@ -3,7 +3,7 @@ import WorkshopsList from "./WorkshopsList";
 import AddEditWorkshop from "./AddEditWorkshop";
 import IWorkshop from './models/IWorkshop';
 import { getWorkshops } from "./services/workshops";
-import WorkshopsContext from './contexts/workshops';
+import WorkshopsContext, { WorkshopsContextType } from './contexts/workshops';
 
 const App = () => {
     const format ="compact";
@@ -11,6 +11,8 @@ const App = () => {
     const [loading, setLoading] = useState(true);
     const [workshops, setWorkshops] = useState([] as IWorkshop[]); // returns an array with [ value, setter ]
     const [error, setError] = useState<Error | null>(null);
+
+    const [ workshopBeingEdited, setWorkshopBeingEdited ] = useState<IWorkshop | null>( null )
 
     // console.log(workshops);
     // console.log(setWorkshops);
@@ -44,11 +46,19 @@ const App = () => {
         const remainingWorkshops = workshops.filter( w => w.id !== id );
         setWorkshops( remainingWorkshops );
     };
+    
+    const updateWorkshopWithId = ( id : number, updatedWorkshop : IWorkshop ) => {
+        const updatedWorkshops = workshops.map( w => w.id !== id ? w : updatedWorkshop );
+        setWorkshops( updatedWorkshops );
+    };
 
-    const value = {
+    const value : WorkshopsContextType = {
         workshops,
         addWorkshop,
-        deleteWorkshopWithId
+        deleteWorkshopWithId,
+        workshopBeingEdited,
+        setWorkshopBeingEdited,
+        updateWorkshopWithId
     };
     
     // React element (internally an object that represents the UI)

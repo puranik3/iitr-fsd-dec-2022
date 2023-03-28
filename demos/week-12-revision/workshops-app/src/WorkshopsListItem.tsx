@@ -2,13 +2,12 @@ import { useWorkshops } from "./contexts/workshops";
 import IWorkshop from "./models/IWorkshop";
 import { deleteWorkshop } from "./services/workshops";
 
-
 type Props = {
-    workshop: IWorkshop
+    workshop: IWorkshop,
 };
 
 const WorkshopsListItem = ({ workshop }: Props) => {
-    const { deleteWorkshopWithId } = useWorkshops();
+    const { deleteWorkshopWithId, setWorkshopBeingEdited } = useWorkshops();
 
     const removeWorkshop = async () => {
         try {
@@ -36,7 +35,7 @@ const WorkshopsListItem = ({ workshop }: Props) => {
                         <h5 className="card-title">{workshop.name}</h5>
                         <div className="card-text" dangerouslySetInnerHTML={{ __html: workshop.description }}></div>
                         <p className="card-text mt-4">
-                            <button className="btn btn-primary btn-sm me-2">Edit</button>
+                            <button className="btn btn-primary btn-sm me-2" onClick={() => setWorkshopBeingEdited( workshop )}>Edit</button>
                             <button className="btn btn-danger btn-sm" onClick={removeWorkshop}>Delete</button>
                         </p>
                     </div>

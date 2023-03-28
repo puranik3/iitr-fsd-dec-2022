@@ -1,7 +1,7 @@
 {
   "workshops": [
     {
-      "name": "Angular JS Bootcamp",
+      "name": "Angular JS",
       "category": "frontend",
       "id": 1,
       "description": "<p><strong>AngularJS</strong> (also written as <strong>Angular.js</strong>) is a JavaScript-based open-source front-end web application framework mainly maintained by Google and by a community of individuals and corporations to address many of the challenges encountered in developing single-page applications.</p><p>It aims to simplify both the development and the testing of such applications by providing a framework for client-side model–view–controller (MVC) and model–view–viewmodel (MVVM) architectures, along with components commonly used in rich Internet applications. (This flexibility has led to the acronym MVW, which stands for \"model-view-whatever\" and may also encompass model–view–presenter and model–view–adapter.)</p>",
@@ -20,7 +20,7 @@
       "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/AngularJS_logo.svg/2000px-AngularJS_logo.svg.png"
     },
     {
-      "name": "React JS Masterclass",
+      "name": "React JS",
       "category": "frontend",
       "id": 2,
       "description": "<p><strong>React</strong> (also known as <strong>React.js</strong> or <strong>ReactJS</strong>) is a JavaScript library for building user interfaces. It is maintained by Facebook and a community of individual developers and companies.</p><p>React can be used as a base in the development of single-page or mobile applications. Complex React applications usually require the use of additional libraries for state management, routing, and interaction with an API.</p>",
@@ -246,18 +246,24 @@
     {
       "name": "Spring Boot",
       "id": 16
+    },
+    {
+      "name": "Vue",
+      "description": "Vue JS is a frontend library which uses a virtual DOM like React",
+      "imageUrl": "https://redux.org/logo",
+      "id": 17
     }
   ],
   "topics": [
     {
-        "id": 1,
-        "name": "Routing in React",
-        "workshopId": 2
+      "id": 1,
+      "name": "Routing in React",
+      "workshopId": 2
     },
     {
-        "id": 2,
-        "name": "Lazy loading in React",
-        "workshopId": 2
+      "id": 2,
+      "name": "Lazy loading in React",
+      "workshopId": 2
     }
   ]
 }

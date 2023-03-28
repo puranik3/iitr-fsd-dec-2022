@@ -1,10 +1,13 @@
 import { createContext, useContext } from 'react';
 import IWorkshop from '../models/IWorkshop';
 
-type WorkshopsContextType = {
+export type WorkshopsContextType = {
     workshops: IWorkshop[],
     addWorkshop: Function,
     deleteWorkshopWithId: Function,
+    workshopBeingEdited: IWorkshop | null,
+    setWorkshopBeingEdited: Function,
+    updateWorkshopWithId: Function
 }
 
 // generates 2 components
@@ -13,7 +16,10 @@ type WorkshopsContextType = {
 const WorkshopsContext = createContext<WorkshopsContextType>({
     workshops: [] as IWorkshop[],
     addWorkshop: () => {},
-    deleteWorkshopWithId: () => {}
+    deleteWorkshopWithId: () => {},
+    workshopBeingEdited: null,
+    setWorkshopBeingEdited: () => {},
+    updateWorkshopWithId: () => {}
 });
 
 // Any functions we write that use any of React's built-in hooks is called a custom hook
